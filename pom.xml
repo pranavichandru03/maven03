@@ -30,6 +30,21 @@
                     <useSystemOut>true</useSystemOut>
                 </configuration>
             </plugin>
+
+            <!-- Maven Jar Plugin to include Main-Class in manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.example.Main</mainClass> <!-- 🔁 Change this to your actual main class -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
